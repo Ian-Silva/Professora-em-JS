@@ -1,0 +1,65 @@
+/*primeiro modo*/
+function acontece(alunos,paraAula){
+  var contador = 0;     
+      
+      for(var i = 0; i < alunos.length; i++){
+        
+          if(alunos[i] <= 0){
+              contador++;
+          }
+      }
+      if(contador >= paraAula){
+        contador = true;
+      }else {
+        contador = false;
+      }
+
+    return contador;
+}
+
+function aberturas(array,minimo){
+  var vetor = [];
+  
+  for (var j = 0; j <  array.length; j++){
+    vetor.push(acontece(array[j],minimo));
+    
+  }
+
+  return vetor;
+}
+console.log(aberturas([5,0,-2,3],2));
+
+/****************************************************************************/
+/*Segundo modo*/
+function acontece(alunos,paraAula){
+    var contador = 0;
+    var vetor = [];
+
+    for(var j = 0; j < alunos.length; j++){
+      
+      
+      for(var i = 0; i < alunos[j].length; i++){
+        
+          if(alunos[j][i] <= 0){
+              contador++;
+          }
+      }
+      if(contador >= paraAula){
+        contador = true;
+      }else {
+        contador = false;
+      }
+      vetor[j] = contador;
+      contador = 0;
+}
+    return vetor;
+  
+}
+
+function aberturas(array,minimo){
+
+  return acontece(array,minimo);
+
+}
+*/
+//console.log(acontece([[10, -5, 3, 0],[6,0,2],[2,-1,0,9]],2));
